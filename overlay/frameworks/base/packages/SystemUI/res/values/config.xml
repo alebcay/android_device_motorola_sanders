@@ -28,6 +28,9 @@
          does not work well, particularly with noisy touchscreens. Note that disabling it may
          increase the rate of unintentional unlocks. -->
     <bool name="config_lockscreenAntiFalsingClassifierEnabled">false</bool>
+    
+    <!-- If true, will show a plus sing in front of LTE -->
+    <bool name="config_hideLtePlus">true</bool>
 
 </resources>
 

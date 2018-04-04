@@ -121,7 +121,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/mot_s5k3l8_bear_chromatix.xml:system/etc/camera/mot_s5k3l8_bear_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/mot_s5k3l8_mono_chromatix.xml:system/etc/camera/mot_s5k3l8_mono_chromatix.xml \
     $(LOCAL_PATH)/configs/camera/msm8953_mot_sanders_camera.xml:system/etc/camera/msm8953_mot_sanders_camera.xml \
-    $(LOCAL_PATH)/configs/camera/s5k4h8_chromatix.xml:system/etc/camera/s5k4h8_chromatix.xml
+    $(LOCAL_PATH)/configs/camera/s5k4h8_chromatix.xml:system/etc/camera/s5k4h8_chromatix.xml \
+    $(LOCAL_PATH)/configs/camera/vfwconfig.json:system/etc/camera/vfwconfig.json
 
 # Qualcomm
 PRODUCT_COPY_FILES += \
@@ -199,6 +200,7 @@ PRODUCT_PACKAGES += \
 
 # Healthd
 PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-convert \
     android.hardware.health@1.0-impl \
     android.hardware.health@1.0-service
 
@@ -352,6 +354,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     sensorservice_32
 
+# Shims
+PRODUCT_PACKAGES += \
+    libqsap_shim
+
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-sanders.conf:system/vendor/etc/thermal-engine.conf
@@ -372,6 +378,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
+    libqsap_sdk \
     libwpa_client \
     wcnss_service \
     wificond \
@@ -386,6 +393,7 @@ PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
 
 PRODUCT_PACKAGES += \
     libcurl \
+    libqsap_sdk \
     libQWiFiSoftApCfg \
     wificond \
     wifilogd \

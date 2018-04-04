@@ -205,7 +205,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.atcmdfwd</name>
         <transport>hwbinder</transport>
@@ -320,7 +319,6 @@
             <instance>slot2</instance>
         </interface>
     </hal>
-
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
         <transport>hwbinder</transport>

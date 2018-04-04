@@ -25,15 +25,6 @@ BOARD_VENDOR := motorola-qcom
 # AIDs and CAPS
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
-# Shim
-TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/adspd|libshim_adsp.so \
-    /system/lib/lib_motsensorlistener.so|libsensor.so \
-    /system/vendor/lib/libmot_gpu_mapper.so|libshim_camera.so \
-    /system/lib/libjustshoot.so|libshims_camera.so \
-    /system/vendor/lib/libguy.so|libshim_camera_hal.so \
-    /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
-
 # Platform
 TARGET_BOARD_PLATFORM := msm8953
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno506
@@ -148,6 +139,10 @@ BOARD_USES_QCNE := true
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 
+# Enable dexpreopt to speed boot time
+WITH_DEXPREOPT := true
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+
 # Display
 BOARD_USES_ADRENO := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
@@ -217,6 +212,15 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # Sensor
 USE_SENSOR_MULTI_HAL := true
+
+# Shim
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/bin/adspd|libshim_adsp.so \
+    /system/lib/lib_motsensorlistener.so|libsensor.so \
+    /system/vendor/lib/libmot_gpu_mapper.so|libshim_camera.so \
+	/system/lib/libjustshoot.so|libshims_camera.so \
+	/system/vendor/lib/libguy.so|libshim_camera_hal.so \
+	/system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true

@@ -13,9 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-[AID_QCOM_DIAG]
-value:2950
-
 [AID_RFS]
 value:2951
 
@@ -49,12 +46,7 @@ caps: NET_BIND_SERVICE
 [system/vendor/bin/pm-service]
 user: AID_SYSTEM
 group: AID_SYSTEM
-caps: NET_BIND_SERVICE BLOCK_SUSPEND NET_ADMIN
-
-[system/vendor/bin/slim_daemon]
 mode: 0755
-user:  AID_GPS
-group: AID_GPS
 caps: NET_BIND_SERVICE
 
 [system/vendor/bin/cnd]
